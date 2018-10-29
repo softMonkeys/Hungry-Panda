@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Hungry_Panda.ViewRecipeMainTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="480">
+    <Grid Background="White">
+        <ScrollViewer Name="MainViewPaneScroll"  VerticalScrollBarVisibility="Hidden" Width="460" Margin="10,60,0,60" HorizontalAlignment="Left"  MouseEnter="Control_MouseEnter" PreviewMouseLeftButtonDown="Control_MouseLeftButtonDown" PreviewMouseLeftButtonUp="Control_MouseLeftButtonUp" PreviewMouseMove="Control_MouseMove" MouseLeave="Control_Leave">
+            <StackPanel Name="MainViewPane" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </ScrollViewer>
+        <Border BorderBrush="White" Background="White" BorderThickness="0" HorizontalAlignment="Left" Height="45" Margin="0,0,0,0" VerticalAlignment="Top" Width="480"/>
+        <Border BorderBrush="White" Background="White" BorderThickness="0" HorizontalAlignment="Left" Height="35" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="480"/>
+        <Button Name="Prev" IsEnabled="False" Click="Btn_Prev" Content="Prev Step" HorizontalAlignment="Left" Margin="30,0,0,10" VerticalAlignment="Bottom" Width="120" Height="33" FontSize="16"/>
+        <Button Name="Home" Click="Btn_MainHome" Tag="Confirm" Content="Home" HorizontalAlignment="Left" Margin="180,0,0,10" VerticalAlignment="Bottom" Width="120" Height="33" FontSize="16"/>
+        <Button Name="Next" Click="Btn_Next" Content="Start Cooking" HorizontalAlignment="Right" Margin="0,0,30,10" VerticalAlignment="Bottom" Width="120" Height="33" FontSize="16"/>
+        <Button Name="BtnShare" Click="Btn_MainShare" Content="Share" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" Width="120" Height="33" FontSize="16" Visibility="Visible"/>
+        <Button Name="BtnComment" Click="Btn_MainComment" Tag="" Content="Comment" HorizontalAlignment="Right" Margin="0,10,30,0" VerticalAlignment="Top" Width="120" Height="33" FontSize="16" Visibility="Visible"/>
+        <Button Name="favoritesStarGrey" Tag="grey" Height="48" Width="48" Click="Btn_MainFavorite" HorizontalAlignment="Left" Margin="216,0,0,0" VerticalAlignment="Top" Visibility="Visible">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Name="image" Source="../../../imgs/UI/grey-star-md.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Name="favoritesStarYellow" Tag="yellow" Height="48" Width="48" Click="Btn_MainFavorite" HorizontalAlignment="Left" Margin="216,0,0,0" VerticalAlignment="Top" Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="../../../imgs/UI/yellow-star-md.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Border Name="confirmation" BorderBrush="Black" BorderThickness="1" Width="280" Height="105" Margin="30,292,50,243" Visibility="Hidden">
+            <StackPanel Background="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Top" Height="105" Width="280">
+                <Label Content="Confirm Navigate to Home?" HorizontalContentAlignment="Center" FontSize="18"/>
+                <Grid>
+                    <Button Click="Btn_MainHome" Tag="Back" Content="Cancel" Height="40" Width="100" Margin="0,20,20,0" HorizontalAlignment="Right" FontSize="18"/>
+                    <Button Click="Btn_MainHome" Tag="Go" Content="Confirm" Height="40" Width="100" Margin="20,20,0,0" HorizontalAlignment="Left" FontSize="18"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+        <Label Name="SignIn" PreviewMouseDown="Btn_SignIn" Content="Not signed in, User specific functions disabled, press to sign in" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,6,0,0" VerticalAlignment="Top" FontSize="16" Height="28" Width="480" Visibility="Hidden" Padding="0"/>
+    </Grid>
+</UserControl>

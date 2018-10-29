@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Hungry_Panda.ViewRecipeEndTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="440">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <ProgressBar Name="progress" Grid.Row="0" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="420" Maximum="1" Value="1" Margin="10,10,0,0"/>
+        <Label Content="Recipe: Compete" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,16,0,0" HorizontalContentAlignment="Center" FontSize="24" Padding="0"/>
+        <Image Name="RecipeEndImage" Grid.Row="0" Margin="9,62,11,0" VerticalAlignment="Top" Source="../../../imgs/Recipes/KungPao_Chicken/kung-pao-chicken.jpg" Height="420" Width="420" Stretch="UniformToFill"/>
+        <Label Content="Recipe Complete" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,16,10,0" Width="420" HorizontalContentAlignment="Center" FontSize="24" Padding="0"/>
+        <TextBlock Name="RecipeEndLabel" Grid.Row="2" TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="Kung-Pao Chicken Complete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" FontSize="18" MinHeight="50" Height="52"/>
+
+    </Grid>
+</UserControl>

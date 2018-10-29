@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Hungry_Panda.ViewSearchTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hungry_Panda"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="320">
+    <Grid Background="White">
+        <Label Content="Ethnicity" HorizontalAlignment="Left" Margin="0,203,0,0" VerticalAlignment="Top" FontSize="24" Width="320" HorizontalContentAlignment="Center"/>
+        <ComboBox SelectionChanged="setEthn" Name="ComboEthnicityBox" Margin="40,245,40,0" VerticalAlignment="Top" Height="44" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" />
+        <Label Content="Difficulty" HorizontalAlignment="Left" Margin="10,316,-10,0" VerticalAlignment="Top" FontSize="24" Width="320" HorizontalContentAlignment="Center"/>
+        <ComboBox SelectionChanged="setDiff" Name="ComboDifficultyBox" Margin="40,358,40,0" VerticalAlignment="Top" Height="44" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" />
+        <Label Content="Allergy" HorizontalAlignment="Left" Margin="0,429,0,0" VerticalAlignment="Top" FontSize="24" Width="320" HorizontalContentAlignment="Center"/>
+        <ComboBox SelectionChanged="setAlrg" Loaded="ComboAllergies_Loaded" Name="ComboAllergyBox" Margin="40,471,40,0" VerticalAlignment="Top" Height="44" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" Width="240"/>
+        <Button Content="Find Dishes" HorizontalAlignment="Left" Margin="89,546,0,0" VerticalAlignment="Top" Width="138" Height="44" FontSize="24" Click="Btn_search"/>
+
+        <TextBox Name="keywordBox" HorizontalAlignment="Left" Height="90" Margin="40,84,0,0" Width="240 " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"
+                 Text="{Binding SearchText, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+            <TextBox.InputBindings>
+                <KeyBinding Key="Enter" Command="{Binding SearchEnterHit}"/>
+                <KeyBinding Key="Return" Command="{Binding SearchEnterHit}"/>
+            </TextBox.InputBindings>
+        </TextBox>
+        <Label Content="Keyword Search" HorizontalAlignment="Left" Margin="0,37,0,0" VerticalAlignment="Top" FontSize="24" Width="320" HorizontalContentAlignment="Center"/>
+    </Grid>
+</UserControl>

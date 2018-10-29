@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Hungry_Panda.ViewUserAccountTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hungry_Panda"
+             mc:Ignorable="d" 
+             d:DesignHeight="671" d:DesignWidth="460">
+    <Grid>
+        <Image Name="userImg" Source="../../../imgs/userIcons/user_ico.jpg" HorizontalAlignment="Left" Height="440" Margin="10,10,0,0" VerticalAlignment="Top" Width="440"/>
+        <Label Name="userName" Content="Cooking Apprentice" HorizontalAlignment="Left" Margin="10,457,0,0" VerticalAlignment="Top" Width="420" HorizontalContentAlignment="Center" FontSize="24"/>
+        <Button Name="userComments" Click="Btn_MainComment" Content="Comment History" HorizontalAlignment="Left" Margin="32,514,0,0" VerticalAlignment="Top" Height="40" Width="150" FontSize="16"/>
+        <Button Name="userFavorites" Click="Btn_MainFavorite" Content="Favorites" HorizontalAlignment="Left" Margin="270,516,0,0" VerticalAlignment="Top" Height="40" Width="150" FontSize="16"/>
+        <Button Name="UserSignOut" Click="Btn_SignOut" Content="Sign Out" HorizontalAlignment="Left" Margin="150,592,0,0" VerticalAlignment="Top" Height="40" Width="150" FontSize="16"/>
+    </Grid>
+</UserControl>

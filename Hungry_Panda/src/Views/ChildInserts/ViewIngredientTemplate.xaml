@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Hungry_Panda.ViewIngredientTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hungry_Panda"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="320">
+    <Grid Background="White">
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="420" Margin="0,0,0,0" VerticalAlignment="Top" Width="320"/>
+        <TextBlock Name="IngredientLabel" TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="Japanese Style Sticky Rice, Medium Grain" HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" FontSize="18" Height="50" MaxHeight="50"/>
+        <Image Name="IngredientImage" VerticalAlignment="Top" Margin="10,49,10,0" Source="../../../imgs/ingredients/PC StickyRice MediumGrain 420x420.png" Height="300" Width="300" Stretch="Fill" />
+        <Button Click="Btn_prev" Content="Back" HorizontalAlignment="Left" Margin="86,374,0,0" VerticalAlignment="Top" Width="150" Height="27" FontSize="18"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Hungry_Panda.ViewSingleCommentTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hungry_Panda"
+             mc:Ignorable="d"
+             d:DesignWidth="440">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="Transparent"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="Transparent"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="Transparent"/>
+        <Style x:Key="NoHighLightBorderTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Grid.RowSpan="2" Name="commentUserIco" Source="../../../imgs/userIcons/user_ico.jpg" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="72" Stretch="Fill"/>
+        <Label Grid.Row="0" Name="commentDate" Content="12/12/12" HorizontalAlignment="Left" Margin="79,26,0,0" VerticalAlignment="Top" Width="64" Height="20" Padding="0"/>
+        <Label Grid.Row="0" Name="commentTime" Content="12:12:12" HorizontalAlignment="Left" Margin="147,26,0,0" VerticalAlignment="Top" Width="64" Height="20" Padding="0"/>
+        <Label Grid.Row="0" Name="commentUserName" Content="Cooking Apprentice" HorizontalAlignment="Left" Margin="77,0,0,0" VerticalAlignment="Top" Width="240" FontSize="16"/>
+        <Label PreviewMouseDown="Btn_delete" Name="Delete" Grid.Row="0" Content="Delete" HorizontalAlignment="Right"  Width="52" VerticalAlignment="Top" FontSize="12" Visibility="Visible"/>
+        <Label PreviewMouseDown="Btn_edit" Background="Transparent" Name="Edit" Grid.Row="0" Content="Edit" HorizontalAlignment="Right"  Width="52" Margin="0,0,52,0" VerticalAlignment="Top" FontSize="12"/>
+        <Label PreviewMouseDown="Btn_confirm" Background="Transparent" Name="Confirm" Grid.Row="0" Content="Confirm" HorizontalAlignment="Right"  Width="52" Margin="0,20,52,0" VerticalAlignment="Top" FontSize="12" Visibility="Hidden"/>
+        <Label PreviewMouseDown="Btn_cancel" Background="Transparent" Name="Cancel" Grid.Row="0" Content="Cancel" HorizontalAlignment="Right"  Width="52" Margin="0,20,0,0" VerticalAlignment="Top" FontSize="12" Visibility="Hidden"/>
+        <Label Content="Comment On: " Grid.Row="0" HorizontalAlignment="Left" Margin="77,40,0,0" VerticalAlignment="Top" Padding="0" Height="18"/>
+        <Button Grid.Row="0" Name="RecipeLink" Content="Kung Pao Chicken" Click="returnToRecipe" HorizontalAlignment="Left" Margin="156,40,0,0" VerticalAlignment="Top" Width="282" Background="Transparent" BorderThickness="0"/>
+        <TextBox Grid.Row="1" Background="Beige" Name="commentText" HorizontalAlignment="Left" MinHeight="20" Margin="79,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="351" IsReadOnly="true" BorderBrush="Transparent"  Style="{DynamicResource NoHighLightBorderTextBox}"/>
+        <Label Background="Transparent" Name="Edited" Grid.Row="2" Content="Last Edited on: " HorizontalAlignment="Left"  Width="90" Margin="80,0,0,0" Height="0" VerticalAlignment="Top" FontSize="12" Visibility="Hidden"/>
+        <Label Grid.Row="2" Name="EditedDate" Content="12/12/12" HorizontalAlignment="Left" Margin="180,4,0,0" VerticalAlignment="Top" Width="64" Height="0" FontSize="14" Padding="0" Visibility="Hidden"/>
+        <Label Grid.Row="2" Name="EditedTime" Content="12:12:12" HorizontalAlignment="Left" Margin="250,4,0,0" VerticalAlignment="Top" Width="64" Height="0" FontSize="14" Padding="0" Visibility="Hidden"/>
+    </Grid>
+</UserControl>

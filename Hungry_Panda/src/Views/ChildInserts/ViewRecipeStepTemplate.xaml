@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Hungry_Panda.ViewRecipeStepTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="440">
+    
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ProgressBar Name="progress" Grid.Row="0" Value="{Binding step}" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="420" Margin="10,10,0,0"/>
+        <Label Content="{Binding ElementName=progress, Path=Value}" ContentStringFormat="Step: {0:F0}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,16,0,0" HorizontalContentAlignment="Center" FontSize="24" Padding="0"/>
+        <Image Name="RecipeStepImage" Grid.Row="0" Margin="10,62,10,10" Source="../../../imgs/Recipes/KungPao_Chicken/Steps/chop carrots.jpeg" VerticalAlignment="Top" Height="420" Width="420" Stretch="UniformToFill"/>
+        <TextBlock Name="RecipeStepTitle" Grid.Row="1" TextAlignment="Center" TextWrapping="Wrap" Text="Recipe Step N : Do Stuff with Carrots" HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" FontSize="18" MinHeight="50" Margin="0,0,0,0"/>
+        <TextBlock Name="RecipeStepText" Grid.Row="2" TextAlignment="Center" TextWrapping="Wrap" Text="Cut them, shred them, cook them, steam them, etc, anything, something, stuff!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" FontSize="18" MinHeight="80" Margin="0,10,0,0"/>
+    </Grid>
+</UserControl>

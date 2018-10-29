@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF4589B0-D08E-4AD2-9B28-E9EB43B74811}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hungry_Panda</RootNamespace>
+    <AssemblyName>Hungry Panda</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <None Include="database\favorites" />
+    <None Include="Recipes\r10\recipe" />
+    <None Include="Recipes\r11\recipe" />
+    <None Include="Recipes\r12\recipe" />
+    <None Include="Recipes\r1\recipe" />
+    <Compile Include="src\Common.cs" />
+    <Compile Include="src\Constants.cs" />
+    <Compile Include="src\RunTimeObjects\child objects\CommentObj.cs" />
+    <Compile Include="src\RunTimeObjects\Model.cs" />
+    <Compile Include="src\RunTimeObjects\child objects\RecipeObj.cs" />
+    <Compile Include="src\RunTimeObjects\child objects\UserObj.cs" />
+    <Compile Include="src\Views\ChildInserts\ViewCommentHistoryTemplate.xaml.cs">
+      <DependentUpon>ViewCommentHistoryTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ChildInserts\ViewCommentTemplate.xaml.cs">
+      <DependentUpon>ViewCommentTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ListElements\ViewUserIconsElement.xaml.cs">
+      <DependentUpon>ViewUserIconsElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\MainWindow\ViewCreateAccountTemplate.xaml.cs">
+      <DependentUpon>ViewCreateAccountTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\MainWindow\ViewMainWindowTemplate.xaml.cs">
+      <DependentUpon>ViewMainWindowTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ChildInserts\ViewHomeTemplate.xaml.cs">
+      <DependentUpon>ViewHomeTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Switcher.cs" />
+    <Compile Include="src\Views\ChildInserts\ViewIngredientTemplate.xaml.cs">
+      <DependentUpon>ViewIngredientTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ChildInserts\ViewRecipeEndTemplate.xaml.cs">
+      <DependentUpon>ViewRecipeEndTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ListElements\ViewRecipeListElement.xaml.cs">
+      <DependentUpon>ViewRecipeListElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\MainWindow\ViewRecipeMainTemplate.xaml.cs">
+      <DependentUpon>ViewRecipeMainTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ChildInserts\ViewRecipeStartTemplate.xaml.cs">
+      <DependentUpon>ViewRecipeStartTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ChildInserts\ViewRecipeStepTemplate.xaml.cs">
+      <DependentUpon>ViewRecipeStepTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ChildInserts\ViewSearchTemplate.xaml.cs">
+      <DependentUpon>ViewSearchTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ChildInserts\ViewShareTemplate.xaml.cs">
+      <DependentUpon>ViewShareTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\MainWindow\ViewSignInTemplate.xaml.cs">
+      <DependentUpon>ViewSignInTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ListElements\ViewSingleCommentTemplate.xaml.cs">
+      <DependentUpon>ViewSingleCommentTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\ChildInserts\ViewUserAccountTemplate.xaml.cs">
+      <DependentUpon>ViewUserAccountTemplate.xaml</DependentUpon>
+    </Compile>
+    <None Include="Recipes\r2\recipe" />
+    <None Include="Recipes\r3\recipe" />
+    <None Include="Recipes\r4\recipe" />
+    <None Include="Recipes\r5\recipe" />
+    <None Include="Recipes\r6\recipe" />
+    <None Include="Recipes\r7\recipe" />
+    <None Include="Recipes\r8\recipe" />
+    <None Include="Recipes\r9\recipe" />
+    <Page Include="src\Views\ChildInserts\ViewCommentHistoryTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ChildInserts\ViewCommentTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ListElements\ViewUserIconsElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\MainWindow\ViewCreateAccountTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\MainWindow\ViewMainWindowTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ChildInserts\ViewHomeTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ChildInserts\ViewIngredientTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\MainWindow\ViewLoadingTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\MainWindow\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Views\MainWindow\ViewLoadingTemplate.xaml.cs">
+      <DependentUpon>ViewLoadingTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\MainWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="src\Views\ChildInserts\ViewRecipeEndTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ListElements\ViewRecipeListElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\MainWindow\ViewRecipeMainTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ChildInserts\ViewRecipeStartTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ChildInserts\ViewRecipeStepTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ChildInserts\ViewSearchTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ChildInserts\ViewShareTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\MainWindow\ViewSignInTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ListElements\ViewSingleCommentTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Views\ChildInserts\ViewUserAccountTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="database\accounts" />
+    <None Include="database\comments" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\UI\HungryPandaLogo.png" />
+    <Resource Include="imgs\Recipes\KungPao_Chicken\kung-pao-chicken-thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\KungPao_Chicken\kung-pao-chicken.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\PC StickyRice MediumGrain 420x420.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\KungPao_Chicken\Steps\Chop Carrots.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\UI\yellow-star-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\userIcons\user_ico.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\UI\social-media-icons.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\userIcons\user_ico2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\UI\grey-star-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\userIcons\panda0.jpg" />
+    <Resource Include="imgs\userIcons\panda1.gif" />
+    <Resource Include="imgs\userIcons\Panda3.png" />
+    <Resource Include="imgs\userIcons\Panda4.png" />
+    <Resource Include="imgs\userIcons\Panda5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r1\r1-thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r1\r1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\stickyRice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\common\steps\Chop Carrots.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\common\kung-pao-chicken-thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\common\kung-pao-chicken.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\UI\Social Media\blogger.ico" />
+    <Resource Include="imgs\UI\Social Media\FaceBook.png" />
+    <Resource Include="imgs\UI\Social Media\Flickr.svg.png" />
+    <Resource Include="imgs\UI\Social Media\Google_plus.jpg" />
+    <Resource Include="imgs\UI\Social Media\Imgr.png" />
+    <Resource Include="imgs\UI\Social Media\linkedin.png" />
+    <Resource Include="imgs\UI\Social Media\Pinterest.ico" />
+    <Resource Include="imgs\UI\Social Media\Pinterest.png" />
+    <Resource Include="imgs\UI\Social Media\Reddit.png" />
+    <Resource Include="imgs\UI\Social Media\StumbleUpon.png" />
+    <Resource Include="imgs\UI\Social Media\Tumblr.png" />
+    <Resource Include="imgs\UI\Social Media\WordPress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\UI\Social Media\youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\chickenBreast.jpg" />
+    <Resource Include="imgs\Ingredients\brownSugar.jpg" />
+    <Resource Include="imgs\Ingredients\cornstarch.jpg" />
+    <Resource Include="imgs\Ingredients\garlic.jpg" />
+    <Resource Include="imgs\Ingredients\greenOnions.jpg" />
+    <Resource Include="imgs\Ingredients\hotChilePaste.jpg" />
+    <Resource Include="imgs\Ingredients\peanuts.jpg" />
+    <Resource Include="imgs\Ingredients\sesameOil.jpg" />
+    <Resource Include="imgs\Ingredients\soySauce.jpg" />
+    <Resource Include="imgs\Ingredients\whiteVinegar.jpeg" />
+    <Resource Include="imgs\Ingredients\whiteWine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r1\Steps\step1.jpg" />
+    <Resource Include="imgs\Recipes\r1\Steps\step2.jpg" />
+    <Resource Include="imgs\Recipes\r1\Steps\step3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r1\Steps\r1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\beanPaste.jpg" />
+    <Resource Include="imgs\Ingredients\darkSoy.jpg" />
+    <Resource Include="imgs\Ingredients\ginger.jpg" />
+    <Resource Include="imgs\Ingredients\onions.jpg" />
+    <Resource Include="imgs\Recipes\r2\r2.jpg" />
+    <Resource Include="imgs\Ingredients\redChiliPowder.jpg" />
+    <Resource Include="imgs\Ingredients\sichuanOil.jpg" />
+    <Resource Include="imgs\Ingredients\spicyBlackBean.jpg" />
+    <Resource Include="imgs\Ingredients\sugar.jpg" />
+    <Resource Include="imgs\Ingredients\tofu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r2\Steps\step1.jpg" />
+    <Resource Include="imgs\Recipes\r2\Steps\step2.jpg" />
+    <Resource Include="imgs\Recipes\r2\Steps\step3.jpg" />
+    <Resource Include="imgs\Recipes\r2\Steps\step4.jpg" />
+    <Resource Include="imgs\Recipes\r2\Steps\step5.jpg" />
+    <Resource Include="imgs\Recipes\r2\Steps\step6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r2\Steps\r2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\avocados.jpg" />
+    <Resource Include="imgs\Ingredients\crabmeat.jpeg" />
+    <Resource Include="imgs\Ingredients\cucumber.jpg" />
+    <Resource Include="imgs\Ingredients\mayonnaise.jpeg" />
+    <Resource Include="imgs\Ingredients\nori.jpg" />
+    <Resource Include="imgs\Recipes\r3\r3.jpg" />
+    <Resource Include="imgs\Ingredients\riceVinegar.jpg" />
+    <Resource Include="imgs\Ingredients\sesameSeeds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r3\Steps\r3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r3\Steps\step1.jpg" />
+    <Resource Include="imgs\Recipes\r3\Steps\step2.jpg" />
+    <Resource Include="imgs\Recipes\r3\Steps\step3.jpg" />
+    <Resource Include="imgs\Recipes\r3\Steps\step4.jpg" />
+    <Resource Include="imgs\Recipes\r3\Steps\step5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\cabbage.jpg" />
+    <Resource Include="imgs\Ingredients\fishSauce.jpg" />
+    <Resource Include="imgs\Ingredients\groundGinger.jpg" />
+    <Resource Include="imgs\Ingredients\KoreanChilePowder.jpg" />
+    <Resource Include="imgs\Recipes\r4\r4.jpg" />
+    <Resource Include="imgs\Ingredients\seaSalt.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r4\Steps\r4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r4\Steps\step1.jpg" />
+    <Resource Include="imgs\Recipes\r4\Steps\step2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\carrots.jpg" />
+    <Resource Include="imgs\Ingredients\egg.jpg" />
+    <Resource Include="imgs\Ingredients\gochujang.jpg" />
+    <Resource Include="imgs\Ingredients\oliveOil.jpg" />
+    <Resource Include="imgs\Recipes\r5\r5.jpg" />
+    <Resource Include="imgs\Ingredients\redPepper.png" />
+    <Resource Include="imgs\Ingredients\spinach.jpg" />
+    <Resource Include="imgs\Ingredients\whiteRice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r5\Steps\r5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r5\Steps\step1.jpg" />
+    <Resource Include="imgs\Recipes\r5\Steps\step2.jpg" />
+    <Resource Include="imgs\Recipes\r5\Steps\step3.jpg" />
+    <Resource Include="imgs\Recipes\r5\Steps\step4.jpg" />
+    <Resource Include="imgs\Recipes\r5\Steps\step5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r6\r6.jpg" />
+    <Resource Include="imgs\Ingredients\sweetPotatoVermicelli.jpg" />
+    <Resource Include="imgs\Ingredients\vegetableOil.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r6\Steps\r6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r6\Steps\step1.jpg" />
+    <Resource Include="imgs\Recipes\r6\Steps\step2.jpg" />
+    <Resource Include="imgs\Recipes\r6\Steps\step3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\butter.jpeg" />
+    <Resource Include="imgs\Ingredients\cakeFlour.jpg" />
+    <Resource Include="imgs\Ingredients\lemonJuice.jpg" />
+    <Resource Include="imgs\Ingredients\milk.jpg" />
+    <Resource Include="imgs\Ingredients\tartar.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\creamCheese.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r7\r7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r7\Steps\r7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r7\Steps\step1.jpg" />
+    <Resource Include="imgs\Recipes\r7\Steps\step2.jpg" />
+    <Resource Include="imgs\Recipes\r7\Steps\step3.jpg" />
+    <Resource Include="imgs\Recipes\r7\Steps\step4.jpg" />
+    <Resource Include="imgs\Recipes\r7\Steps\step5.jpg" />
+    <Resource Include="imgs\Recipes\r7\Steps\step6.jpg" />
+    <Resource Include="imgs\Recipes\r7\Steps\step7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\beef.jpg" />
+    <Resource Include="imgs\Ingredients\blackPepper.jpg" />
+    <Resource Include="imgs\Recipes\r8\r8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r8\Steps\r8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r8\Steps\step1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r8\Steps\step2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r9\Steps\step1.jpg" />
+    <Resource Include="imgs\Recipes\r9\Steps\step2.jpg" />
+    <Resource Include="imgs\Recipes\r9\Steps\step4.jpg" />
+    <Resource Include="imgs\Recipes\r9\Steps\step5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r9\r9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r9\Steps\r9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Ingredients\noodle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r10\r10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r10\Steps\r10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r10\Steps\step1.JPG" />
+    <Resource Include="imgs\Recipes\r10\Steps\step2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r11\Steps\step1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r11\r11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r11\Steps\r11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r12\r12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\Recipes\r12\Steps\r12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imgs\Recipes\r12\Steps\step1.jfif" />
+    <Content Include="imgs\Recipes\r12\Steps\step2.jfif" />
+    <Resource Include="imgs\Recipes\r12\Steps\step3.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

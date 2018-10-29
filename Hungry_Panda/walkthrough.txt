@@ -1,0 +1,138 @@
+Phillip  Renwick
+
+See bug.txt for currently outstanding issues
+
+Implemented functionality: 
+	Recipes
+	Photoes of food/ingredients, with some translations
+	estimated times
+	search via difficulty
+	Favorites
+	review via commenting
+	social media integration
+	
+
+
+scrollable elements all are click/touch drag enabled, and as such, the scroll bars have been hidden, since this is intended as a mobile app
+drag/scroll has some outstanding issues which may present themselves.  Its exhibited by screens being scrolled on arrival, potentially off the top, or with locked, non zero offsets.
+	- toggling to home frequently fixes it, and for more severe cases, restarting, as they are generally not consistent.
+
+	
+detailed walkthrough of all functionality, description of views and instructions, instructions preceded with *
+1)  On launch, the program brings you to the signIn view.  From here, you can sign in, or create a new account.
+    * Initially, click on skip to not provide any credentials and sign in anonymously
+	This has the consequence of disabling user specific features.
+	This is also noted in the top left of the main view, and top row of the recipe view with a clickable message to sign in.
+2)  From signIn, we arrive at the Popular recipes view.
+	The intent of this view is to provide a subset of the most popular recipes as loaded from a central system
+		- for this prototype, it merely lists all available recipes.
+    This list of recipes is click/touch drag capable, and also answers a mouse scroll wheel
+	At the bottom we have two navigation buttons, Home and Search, more on them later.
+	Clicking on any given recipe will open the recipe sarting page for the given recipe.
+	* Lets drag the list upwards, and select california roll sushi, which is just off the bottom of the view initially
+3)	This presents us with a larger version of the recipe image, a prep time, cooking time, description, and ingredients list
+	On this view, an anonymous User sees the entire top row replaced with a message regarding disabled functions, and signing in to restore them. 
+	We also have three navigation buttons at the bottom, previous, home, and start cooking, with previous disabled at this point.
+	* Drag the view upwards to show the ingredients which are to the bottom of the view.
+4)	The ingredients list line wraps if necessary to support arbitrarily long ingredient names, though very long single words will overflow
+	* Clicking anywhere within the 'row' that an ingredient occupies, except for a small margin between fields for ordering purposes, will trigger a switch to an ingredient details view, for example, clicking rice vinnegar, or 1/4 cup, and we are shown an image of the ingredient to aide in obtaining some.
+5)	Back will return to the recipe start view,and the scroll will be where you left it.
+6)	* Click on Start cooking, and we proceed to step 1
+	The navigation buttons update to reflect that we can return to the previous step, can go to the next, or back to home.
+	A progress bar is displayed, which displays progress through n+1 steps, the +1 being the completion message at 100%
+	All steps are scrollable if the ammount of information requires scrolling to present it all.
+	All steps remember their own scroll setting, prev/next will go to the appropriate step, and restore the scroll setting if changed from default
+7)  * Press Next/Prev step as desired until reaching the final view, upon which Next is disabled, and retitled recipe COmplete.
+	this view allows for showing the completed dish, and for resenting more information to the user, perhaps for serving instructions once fully prepared.
+8)	* Click Home.
+	This will present you with a confirmation dialogue to confirm your wish to leave the recipe and return to the home view.
+	Clicking confirm resets all progress, cancel, well, cancels.
+	* Cancel for now.
+9)  Lets enable the user functionality that we disabled when we skipped signing in.
+	* click on the text across the top of the window that says "Not signed in, User specific functions disabled, press to sign in"
+	This returns us to the sign in screen.
+	sign in, create, or skip will all return us to the recipe we just left, on the step we left from.
+	* Lets create a new user, click on create
+10)	This view presents a selection of user Icons, three text fields for username, password,and password confirm, respectively, and a create/signIn and cancel button.
+	Cancel will return to sign In, Create will add the user to the user's file, and sign you in, returning you to here you came from, or the popular recipe's list if the app just started
+	the create/signIn button will enable only once a valid icon, username, and password are supplied
+	* enter username 'a', no quotes
+	'a' was one of the test users, since it exists, you get a message informing you the name is taken andis not available.
+	* enter whatever username you prefer
+	* enter any password, the current version offers no restrictions, other than that they match 
+	The user Icons are click/touch draggable, click to select one, selection will be indicated with a border
+	* Select any icon you prefer.
+	* click create/Signin
+	Your user will be saved to file, so you can use this user again without needing to create it.
+	You will be sent to the appropriate view, the home view if the app just started, otherwise the view you came from previously.
+11) The disabled/signin message along the top has now been replaced with three buttons, a share, favorite, and comment.
+	As a new user, you will have no favorites or comments yet, but that won't stop us.
+	* click share
+	This opens a window with links to a selection of social mdeia sites, clicking them will trigger the browser to go to their respective signin pages.
+	 - if production, this would be tied to an API to handle signIn and interface with the site, but that was beyond the scope of ths assignment.
+	* try one of more of the social media buttons
+	* Back will return to where we came from.
+12) * click the star, this is for setting a favorite, and will change from grey to yellow
+	This can be toggled, is saved to file, and will be set accordingly on loading a user.
+	* ensure recipe is not favorited, we'll need that later
+	favorites can be reviewed from the user account page, discussed later
+13)	* click comment
+	This brings up the comments associated with the recipe
+	As this is not a recipe view, we also have out icon and username occupying the 2/3 of top row of the window.
+	* Type a comment and click send.  the comment can be of any size, the textbox and comments will resize accordingly.
+14)	now that we have a comment, we can se that they have your user icon, name, the date/time they were created, the recipe they are associated with, and edit and delete buttons.
+	Edit and delete are only visible for your own comments,and only if they have not been deleted.
+	* click edit, this will hide both edit and delete buttons, and will unhide confirm and cancel buttons.
+	* edit the comment, click cancel, this will restore the previous text, and will not set/update the last edited time.
+	* edit the comment, click confirm.  This saves the text, and updates/sets the last edited date/time.
+	* click delete.  Cancel will, predictably, cancel.  Click confirm. this replaces the text with a default deleted message, and disabled the edit/delete buttons.
+15)	* Click on either the user icon, or username, both have the same effect,and we will be taken to the user accont page.
+	From here we have buttons that can take us to our comment history, favorites, and we can sign out,as well as the two main navigation links, Home and Search.
+	* Click comment history
+	This presents a view similar to a recipe's comment listing, except no ability to add new comments, only your comments, for all recipes.
+	As we have only one comment, this cannot be dragged/scrolled, but is capable if enough comments are present.
+	* click the user icon/name to return to the account view
+16) * click favorites
+	This presents the user's favorite recipes. 
+	As there are no recipes favorited, it will indicate such via a centered, red text message plainly stating "you have no favorites"
+	Let's fix that.  We commented on a recipe, lets go favorite it.
+	* return to accounts via icon/username, click comment history, click the recipe title from the comment
+	that has brought us back to the recipe, so we can favorite it.
+	* Click Home, and confirm.
+	* click the user icon/name to return to the account view
+	* click favorites
+	Now it shows the recipe since we have a favorite now.
+	If thereare neough recipes to need scrolling, it behaves identically to the popular/home view for scrolling.
+17)	* Click sign out	
+	This takes us back to the signin view as we last left it, so you can simply sign in if it was accidental, or change the credentials/skip if so desired.
+	* cick signIn with current credentials to sign back in.
+18)	* click search
+	this presents a search window which has a variety of behaviours.
+	- If the fields are all left default, it will present ALL recipes as results.
+	- If keywords are typed in, they are treated as OR results, and return all recipes that contain any of the given keywords
+	- If keywords are preceded with a -, they are NEGATE, and will exclude recipes that contain the keyword
+	- if keywords are preceded with a +, they are AND, and must be present for a result to be valid.
+	Ethnicity and Difficulty are treated as AND values, and must be valid for the recipe to be a result
+	Allergy is NEGATE, and must not be present.
+	Alergy and keywords use all available text for a recipe to decide, ethnicity and difficulty use only their respective fields.
+	all are case insensitive
+	
+	ex queries:
+		keyword: bibi, search
+		result: Bibimbap
+		
+		keyword: -nut or allergy: nut
+		result: all recipes, except at least one recipe, Kung Pao chicken is excluded, and perhaps some others.
+				the california rolls we had to scroll to reach, are now visible without scrolling
+
+		keyword: hard or difficulty: hard
+		result: all hard recipes
+		
+		keyword: easy japanese
+		result: all recipes that are easy or japanese.
+		
+		keyword: +easy +chinese
+		result: Kung Pao Chicken, the onlyrecipe tagged as both easy and chinese.
+19)	if so desired, close the app, and restart it.  the account created above is preserved, and can be signed into, the comment(s) left can be viewed/edited/deleted, and favorited reviewed/toggled/added to.
+				
+That is a 100 functionality walk through.

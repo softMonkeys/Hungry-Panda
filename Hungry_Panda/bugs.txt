@@ -1,0 +1,9 @@
+No idea how to open OSKey - would need it for a true mobile app
+No idea how to stop recipe comments from aligning wrong - its locking initial transform incorrectly - too high.
+	
+
+attempt if time permits:
+	can scroll steps too far
+
+	comments start scrolled!
+	confirm navigate if click recipe title

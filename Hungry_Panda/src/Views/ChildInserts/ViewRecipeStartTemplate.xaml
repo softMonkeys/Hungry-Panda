@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="Hungry_Panda.ViewRecipeStartTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignWidth="440">
+    <UserControl.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonThin" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="-5" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White" Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="RecipeStartLabel"  Grid.Row="0" TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="Kung-Pao Chicken and more words to make this a much longer recipe so it line wraps" HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" FontSize="24" MinHeight="50"/>
+        <Image Name="RecipeStartImage" Grid.Row="1" Margin="10,10,10,0" Source="../../../imgs/Recipes/KungPao_Chicken/kung-pao-chicken.jpg" VerticalAlignment="Top" Height="420" Width="420"/>
+        <Label Content="Prep Time"  Grid.Row="1" HorizontalAlignment="Left" Width="120" Margin="60,440,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
+        <Label Name="PrepTime"  Grid.Row="1" Content="12:12" HorizontalAlignment="Left" Width="120" Margin="60,460,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Cooking Time"  Grid.Row="1" HorizontalAlignment="Right" Margin="0,440,60,0" Width="120" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
+        <Label Name="CookingTime"  Grid.Row="1" Content="12:12" HorizontalAlignment="Right" Margin="0,460,60,0" Width="120" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Description"  Grid.Row="2" Margin="0,0,0,0" HorizontalAlignment="Left" FontWeight="Bold" VerticalAlignment="Top" Width="440" HorizontalContentAlignment="Center" FontSize="24" Height="40" Padding="0"/>
+        <TextBlock Name="Description"  Grid.Row="2" TextAlignment="Center" Margin="0,50,0,0" TextWrapping="WrapWithOverflow" Text="Kung-Pao Chicken description and more words to make this a much longer recipe so it line wraps" HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" FontSize="24" MinHeight="50"/>
+        <Label Content="Ingredients"  Grid.Row="3" Margin="0,20,0,0" HorizontalAlignment="Left" FontWeight="Bold" VerticalAlignment="Top" Width="440" HorizontalContentAlignment="Center" FontSize="24" Height="40" Padding="0"/>
+        <Grid Margin="0,70,0,0" x:Name="IngredientsGrid" Grid.Row="3" MinHeight="40" VerticalAlignment="Top" Width="400">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Name="IngredientsQty" HorizontalAlignment="Left"/>
+            <StackPanel Grid.Column="1"/>
+            <StackPanel Grid.Column="2" Name="IngredientsName" HorizontalAlignment="Right"/>
+        </Grid>
+    </Grid>
+</UserControl>
